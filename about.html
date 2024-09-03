@@ -1,60 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="./style.css" rel="stylesheet">
-
-
-<nav class="navbar navbar-expand-sm navbar-dark" style=" color: #EEE7E8;">
-  <div style="align-items: center; justify-content: center;" class="container-fluid">
-    <div class="flexrow">
-      <h2 class="nav-title">PS70 Fall 2024</h2>
-    </div>
-    <div class="navbar-nav">
-      <h4><a class="nav-link" href="./index.html">Home</a></h4>
-      <h4><a class="nav-link" href="./about.html">About</a></h4>
-    </div>
-  </div>
-</nav>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS70: Intro to Digital Fabrication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .center-image img {
+            width: 400px;
+            height: auto;
+        }
+        .image-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .image-row img {
+            height: 200px;
+            width: auto;
+        }
+        .content-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
 <body>
-<xmp style="display:none;">
-<div class="textcontainer">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="color: #EEE7E8;">
+        <div style="align-items: center; justify-content: center;" class="container-fluid">
+            <div class="flexrow">
+                <h2 class="nav-title">PS70 Fall 2024</h2>
+            </div>
+            <div class="navbar-nav">
+                <h4><a class="nav-link" href="./index.html">Home</a></h4>
+                <h4><a class="nav-link" href="./about.html">About</a></h4>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">About Me</h3>
 
+        <div class="center-image">
+            <img src="./evan.PNG" alt="about me image">
+        </div>
 
-<h3>About Me</h3>
+        <div class="content-section">
+            <p>
+                Hi! My name is Evan Jolley. I am a senior in Currier studying Applied Math and Computer Science. I am from Omaha, Nebraska.
+            </p>
+        </div>
 
-<p class="margin">   </p>
-<div class="center-row">
-  <img src="./evan.PNG" alt="about me image" style="max-width: 200px;">
-  <p id="aboutme">
-    Hi! My name is Evan Jolley -- I am a senior in Currier studying Applied Math and Computer Science.
-  </p>
-</div>
-<br></br>
+        <div class="content-section">
+            <p>
+                I am very interested in tech entrepreneurship. I currently work at <a href="https://www.perplexity.ai">Perplexity</a> as a Growth Intern and at <a href="https://www.arize.com">Arize AI</a> writing articles and conducting research on artificial intelligence.
+            </p>
+        </div>
 
-I am very interested in tech entrepreneurship. I currently work at <a href="https://www.perplexity.ai">Perplexity</a> as a Growth Intern and at <a href="https://www.arize.com">Arize AI</a> writing articles and conducting research on artificial intelligence.
-<br></br>
-<img src="./cuba.JPG" alt="cuba image" style="max-width: 200px;">
-<img src="./peru.JPG" alt="peru image" style="max-width: 200px;">
-<img src="./egypt.PNG" alt="egypt image" style="max-width: 200px;">
+        <div class="image-row">
+            <img src="./cuba.JPG" alt="cuba image">
+            <img src="./peru.JPG" alt="peru image">
+            <img src="./egypt.PNG" alt="egypt image">
+        </div>
 
-<br></br>
-Maybe even add a video?
-<br></br>
+        <div class="content-section">
+            <p>I love to travel. Three of my favorite places I've been are Cuba, Peru, and Egypt.</p>
+        </div>
 
-<video width="640" height="480" controls>
-  <source src="temp-video.mp4" type="video/mp4">
-</video>
+        <div class="image-row">
+          <img src="./books.png" alt="boks image">
+      </div>
 
+      <div class="content-section">
+          <p>I also like to read. I read 7 books this summer.</p>
+      </div>
 
-</div>
-</xmp>
+        <div class="center-image">
+            <img src="" alt="___ image">
+        </div>
+
+        <div class="content-section">
+            <p>
+                I'm excited to take this course 
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h4>My Introduction Video</h4>
+            <video width="100%" controls>
+                <source src="temp-video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="./strapdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-<script src="./strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>
