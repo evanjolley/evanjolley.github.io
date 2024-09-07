@@ -45,7 +45,7 @@ nav {
   border-radius: 20px;
   padding: 10px 30px;
   background-color: #ffffff;
-  color: #EEE7E8;
+  color: black;
   transition: 0.3s;
 }
 
@@ -54,6 +54,7 @@ nav {
   border-radius: 20px;
   padding: 10px 30px;
   background-color: #a3a3a3;
+  color: white;
   transition: 0.3s;
 }
 
