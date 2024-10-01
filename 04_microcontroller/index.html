@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>PS70: Intro to Digital Fabrication </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="../style.css" rel="stylesheet">
+<head>
+  <title>PS70: Intro to Digital Fabrication </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+</head>
 
 
 <nav class="navbar navbar-expand-sm navbar-dark" style=" color: #EEE7E8;">
@@ -12,8 +16,8 @@
       <h2 class="nav-title">PS70 Fall 2024</h2>
     </div>
     <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
+      <h4><a class="nav-link" href="../index.html" style="color: black;">Home</a></h4>
+      <h4><a class="nav-link" href="../about.html" style="color: black;">About</a></h4>
     </div>
   </div>
 </nav>
@@ -24,12 +28,91 @@
 <p class="margin">   </p>
 
 <h3>Week 4: Microcontroller Programming</h3>
+<p class="margin">   </p>
 
-<h4>[Do Something with an arduino]</h4>
+I originally wanted to make a light board that flashed in certain patterns, but after experimenting with the buzzer component I decided to make it play a little jig with corresponding lights.
+<video src="./twinkle.mov" controls style="width: 600px;">
+  Your browser does not support the video tag. Please upgrade your browser to view this video.
+</video>
+<p class="margin">   </p>
+
+I definitely could have made this project more complex. I have a background in CS and could have made it do more. However, I am so underwater with work and an internship this week (trying to impress my boss so that we will give me a job in 4 months). I hope you think this is cool!
+<p class="margin">   </p>
+
+Here is my circuit:
 
 
+<p class="margin">   </p>
 
-
+Here is my code:
+<pre><code class="language-cpp">
+  const int NUM_LEDS = 7;
+  const int LED_PINS[NUM_LEDS] = {2, 3, 4, 5, 6, 7, 8};
+  const int BUZZER_PIN = 9;
+  
+  const int MELODY_LENGTH = 48;
+  const int MELODY[] = {
+         261, 261, 392, 392, 440, 440, 392, 0,
+         349, 349, 330, 330, 294, 294, 261, 0,
+         392, 392, 349, 349, 330, 330, 294, 0,
+         392, 392, 349, 349, 330, 330, 294, 0,
+         261, 261, 392, 392, 440, 440, 392, 0,
+         349, 349, 330, 330, 294, 294, 261, 0
+  };
+  
+  const int LIGHT_TRIGGERS[] = {
+      2, 2, 6, 6, 7, 7, 6, 0,
+      5, 5, 4, 4, 3, 3, 2, 0,
+      6, 6, 5, 5, 4, 4, 3, 0,
+      6, 6, 5, 5, 4, 4, 3, 0,
+      2, 2, 6, 6, 7, 7, 6, 0,
+      5, 5, 4, 4, 3, 3, 2, 0
+  };
+  
+  const int NOTE_DURATIONS[] = {
+      300, 300, 300, 300, 300, 300, 600, 300,
+      300, 300, 300, 300, 300, 300, 600, 300,
+      300, 300, 300, 300, 300, 300, 600, 300,
+      300, 300, 300, 300, 300, 300, 600, 300,
+      300, 300, 300, 300, 300, 300, 600, 300,
+      300, 300, 300, 300, 300, 300, 900, 300
+  };
+  
+  void setup() {
+      for (int i = 0; i < NUM_LEDS; i++) {
+          pinMode(LED_PINS[i], OUTPUT);
+      }
+      pinMode(BUZZER_PIN, OUTPUT);
+  }
+  
+  void loop() {
+      playTwinkleTwinkle();
+      delay(2000);
+  }
+  
+  void playTwinkleTwinkle() {
+      for (int i = 0; i < MELODY_LENGTH; i++) {
+          if (MELODY[i] != 0) {
+              tone(BUZZER_PIN, MELODY[i], NOTE_DURATIONS[i]);
+              
+              // Light up the corresponding LED
+              if (LIGHT_TRIGGERS[i] != 0) {
+                  int ledIndex = LIGHT_TRIGGERS[i] - 2;
+                  digitalWrite(LED_PINS[ledIndex], HIGH);
+              }
+          }
+          
+          delay(NOTE_DURATIONS[i]);
+          
+          for (int j = 0; j < NUM_LEDS; j++) {
+              digitalWrite(LED_PINS[j], LOW);
+          }
+          
+          noTone(BUZZER_PIN);
+          delay(50);
+      }
+  }
+</code></pre>
 
 </div>
 </xmp>
