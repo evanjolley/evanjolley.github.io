@@ -40,14 +40,23 @@ I definitely could have made this project more complex. I have a background in C
 <p class="margin">   </p>
 
 Here is my circuit:
+<div class="center-image"></div>
+  <img src="./circuit.png" alt="circuit image" style="width: 600px;">
+</div>
 
+- Connect the Arduino's 5V to the positive.
+- Connect the Arduino's GND to the negative.
+- Connect the anode of each light to pins 2-7.
+- Connect a resistor from the cathode of each light to the negative.
+- Connect the positive of the button to pin 7 on the Arduino.
+- Connect the negative of the button to the negative on the breadboard.
 
 <p class="margin">   </p>
 
 Here is my code:
 <pre><code class="language-cpp">
-  const int NUM_LEDS = 7;
-  const int LED_PINS[NUM_LEDS] = {2, 3, 4, 5, 6, 7, 8};
+  const int NUM_LEDS = 6;
+  const int LED_PINS[NUM_LEDS] = {2, 3, 4, 5, 6, 7};
   const int BUZZER_PIN = 9;
   
   const int MELODY_LENGTH = 48;
