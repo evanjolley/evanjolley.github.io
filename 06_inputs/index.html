@@ -12,8 +12,8 @@
       <h2 class="nav-title">PS70 Fall 2024</h2>
     </div>
     <div class="navbar-nav">
-      <h4><a class="nav-link" href="../index.html">Home</a></h4>
-      <h4><a class="nav-link" href="../about.html">About</a></h4>
+      <h4><a class="nav-link" href="../index.html" style="color: black;">Home</a></h4>
+      <h4><a class="nav-link" href="../about.html" style="color: black;">About</a></h4>
     </div>
   </div>
 </nav>
@@ -24,11 +24,70 @@
 <p class="margin">   </p>
 
 <h3>Week 6: Electronic Inputs</h3>
+<p class="margin">   </p>
 
-<h4>Assignment 1: Capactive Sensor<h4>
+I built this mood lamp!
+<p class="margin">   </p>
 
-<h4>Assignment 2: [Use + Calibrate Another Sensor]</h4>
+<video src="./6.mov" controls style="width: 600px;">
+  Your browser does not support the video tag. Please upgrade your browser to view this video.
+</video>
+<p class="margin">   </p>
 
+By holding your hand over the sensor, you can toggle between moods. Mine displays happiness as yellow, sadness as blue, and stress as green.
+<p class="margin">   </p>
+
+A demo and explanation can be found by playing the video.
+
+<p class="margin">   </p>
+
+Here is my circuit:
+<div class="center-image"></div>
+  <img src="./c1.png" alt="circuit image" style="width: 600px;">
+</div>
+
+Here are the readings with no hand above the sensor:
+<div class="center-image"></div>
+  <img src="./reading1.png" alt="circuit image" style="width: 600px;">
+</div>
+
+And with a hand above the sensor:
+<div class="center-image"></div>
+  <img src="./reading2.png" alt="circuit image" style="width: 600px;">
+</div>
+
+Additionally, here is a reading that showcases the effect of an averaging function on the sensor output (add a certain range of values and divide by the number of values). On the left, the sensor values are being averaged for every 100 readings. On the right, they are being averaged for every 1000 readings. This helped a lot with preventing the readings from jumping around. It was unusable with absolutely no averaging.
+<div class="center-image"></div>
+  <img src="./reading3.png" alt="circuit image" style="width: 600px;">
+</div>
+<p class="margin">   </p>
+
+Here is a night light I built, so that I never have to be afraid of the dark again. This is similar to how those night lights that turn on when the room is dark.
+
+<video src="./light.mov" controls style="width: 600px;">
+  Your browser does not support the video tag. Please upgrade your browser to view this video.
+</video>
+<p class="margin">   </p>
+
+Here is my circuit:
+<div class="center-image"></div>
+  <img src="./c2.png" alt="circuit image" style="width: 600px;">
+</div>
+
+Here are the readings with no hand above the sensor:
+<div class="center-image"></div>
+  <img src="./reading4.png" alt="circuit image" style="width: 600px;">
+</div>
+
+And with a hand above the sensor:
+<div class="center-image"></div>
+  <img src="./reading5.png" alt="circuit image" style="width: 600px;">
+</div>
+
+This was much easier to work with than the capacitive sensor -- much more normalized. If I were to restart thinking about my final project, I might make bike lights that turn on when I'm riding at night.
+<p class="margin">   </p>
+
+<p class="margin">   </p>
 </div>
 </xmp>
 </body>
